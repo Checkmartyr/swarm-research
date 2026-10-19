@@ -1,0 +1,6 @@
+interface:
+  display_name: "Swarm Research Planner"
+  short_description: "Run deep research and track progress in Obsidian"
+  default_prompt: "Use $swarm-research to investigate my question, ask for my research mode and effort budget, track progress and save results in Obsidian using MCP or the disk vault, and deliver local exports of the cited report, research plan, and evidence ledger."
+policy:
+  allow_implicit_invocation: true
