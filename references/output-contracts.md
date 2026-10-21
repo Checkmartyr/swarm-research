@@ -2,6 +2,8 @@
 
 Use these formats when creating the plan, merging evidence, and writing the report. Adapt presentation to the audience while preserving the fields needed for provenance and resumption.
 
+Use [validation-contract.md](validation-contract.md) for versioned machine-readable records and the read-only validator. These records live in the same plan/ledger as their human-readable interpretation; derive summaries from them, not a separately edited state file. Use [clarification.md](clarification.md) before deciding the brief is settled.
+
 ## Locations and ownership
 
 Honor explicit user destination overrides. By default use the authoritative Obsidian destination, run folders, metadata, and checkpoint rules in [obsidian-workflow.md](obsidian-workflow.md). Put local exports under the host's output directory, normally `outputs/<run-folder>/`, and scratch notes and pending checkpoints in `work/<run-id>/`. Use a filesystem-safe topic slug; add a run suffix for a new investigation if its folder already exists. Resume existing files only when continuing that investigation. The coordinator writes shared notes and exports; researchers write only their assigned scratch notes.
@@ -13,6 +15,8 @@ Files are `<topic>-research-plan.md`, `<topic>-evidence.md`, and `<topic>-report
 Record:
 
 - **Brief:** question, intended audience/use, selected mode, scope exclusions, relevant timeframe, required sources, and overall acceptance criteria.
+- **Clarification:** settled decision-tree branches with their document basis, resolution and scenario check; unresolved consequential branches block dependent research.
+- **Requirements:** stable IDs, obligation (`required`, `target`, `conditional`), affected tasks, artifact/section evidence, acceptance status, review disposition and limitation/condition where applicable. Every requested deliverable, language and count is represented.
 - **Budget:** selected effort/custom limits; assignment ceiling and used/remaining counts; follow-up rounds used/remaining; review and recheck state; concurrency cap; execution start and deadline when applicable.
 - **Method:** source strategy, access/tool limitations, and independent or sequential execution.
 - **Dependency graph:** task IDs and edges; execution waves are illustrative, while satisfied dependencies control readiness.
@@ -50,7 +54,7 @@ For each source record:
 
 - ID, title, author/publisher, URL or local path, and source type.
 - Publication/update date when available, access date, and relevant version/revision.
-- Inspection status: `inspected`, `discovery-only`, or `inaccessible`; describe partial access, such as abstract-only inspection.
+- Inspection status: `inspected`, `discovery-only`, or `inaccessible`; access scope: `full`, `partial`, `abstract`, `search-excerpt`, or `none`. An inspected excerpt cannot be counted as an inspected underlying full page.
 - Underlying evidence lineage and limitations affecting interpretation.
 
 Unknown dates remain explicitly unknown. Access date is not publication date. A discovery-only or inaccessible source can identify a gap but cannot establish a claim.
@@ -64,7 +68,8 @@ For each material claim record:
 - **ID and statement:** a specific, bounded claim, with timeframe/population/version where relevant.
 - **Type:** source-reported finding, direct observation, or inference. For an inference, state the reasoning and its limits.
 - **Evidence:** source IDs with precise page/section/line/table/passage locators; indicate support, contradiction, or contextual relevance. Include a brief paraphrase or permitted short excerpt to make the link auditable.
-- **Assessment:** supported, disputed, or unresolved; qualitative confidence with a reason tied to evidence quality, independence, applicability, and consistency.
+- **Fact-check:** coordinator identity, verification method, disconfirmation search and outcome, independence/single-source rationale, conflict resolution, numerical check where applicable, and consequence for conclusions.
+- **Assessment:** `supported`, `partially-supported`, `disputed`, or `unresolved`; qualitative confidence with a reason tied to evidence quality, independence, applicability, and consistency. A limited/disputed/unresolved claim remains visibly qualified in the report.
 - **Provenance:** originating task IDs, verification/reviewer findings, and remaining gaps.
 
 Separate a source's assertion from the researcher's conclusion. Record contrary evidence beside supporting evidence. Do not assign numerical confidence without an appropriate method.
@@ -82,3 +87,5 @@ Write a reader-facing report with:
 Use stable claim headings such as `### C001` in the root ledger, with an additional `<a id="c001"></a>` for portable Markdown exports. Obsidian reports link to the vault-relative ledger path and heading, for example `[[Research/swarm-research/<run-folder>/<topic>-evidence#C001|C001]]`; exports use `[C001](<topic>-evidence.md#c001)`. If a claim moves to a child note, keep its root heading/anchor and point it to the child. Direct source links should point to the supporting page or artifact, not a search-results page. Clearly mark inference and recommendations rather than presenting them as sourced facts.
 
 State when a deadline, assignment cap, missing access, or failed review limited the result. Do not claim exhaustive coverage from a bounded search. Finish with links to the plan and evidence ledger. The chat delivery links all three local exports, identifies the vault location, and briefly describes material limitations, including pending vault saves or stale dashboard/exports.
+
+Completion requires the actual requirement matrix and fact-check/review dispositions, not just terminated agents. Incomplete mandatory deliverables keep the outcome partial. Access-limited targets may close with disclosed limits when the brief explicitly allows that. Preserve source/claim anchors through splitting and validate the actual vault/export snapshot after the last edit.
