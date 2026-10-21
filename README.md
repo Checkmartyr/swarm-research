@@ -1,6 +1,6 @@
 # Swarm Research
 
-A Codex skill for planning and carrying out bounded, evidence-led research. It helps clarify what the user needs, coordinate research tasks, compare independent sources, fact-check important claims, and verify the final deliverables.
+A multi-skill research toolkit for Codex that brings together document-grounded clarification, specialist research, multi-source fact-checking, synthesis, and independent review. It coordinates these capabilities through one bounded research workflow; the package installs the main `$swarm-research` entry skill and its supporting protocols and tools.
 
 ## What it does
 
