@@ -38,17 +38,35 @@ Consult Context7 when available for relevant external libraries/frameworks/APIs.
 
 Read-only checks can validate claims when permitted. Do not implement fixes or mutate the target system as part of research. Necessary access or extra permission must come through the host's normal mechanisms; unavailable access becomes a documented limitation.
 
+## Claim-level fact-check
+
+Before dispatch, give each subquestion an evidence plan: the appropriate original source/data/code, a genuinely independent check, a plausible refutation or alternative explanation, and applicable date/version/population limits. A source's authority depends on the claim: a provider establishes its documented policy, not independent effectiveness or market demand.
+
+During collection, record publication and access dates separately, revision, exact evidence locator, access scope, and underlying evidence lineage. Reprints, syndicated stories and multiple articles citing one dataset are one lineage. A search excerpt is evidence of what the excerpt displays, not of the full underlying page. Record the inspected excerpt separately from an inaccessible target where needed. Count full/partial/abstract/excerpt/discovery-only access separately; a large discovery count cannot satisfy a full-page inspection target.
+
+Before synthesis, the coordinator reopens every material supporting passage and checks the worker's paraphrase against it. A claim is material when changing it could change the answer, ranking, feasibility, price/effort, readiness or consequential boundary. Use the claim record as the fact-check card, rather than maintaining a second checklist:
+
+1. Bound the statement by timeframe, population and version. Separate source assertion, direct observation, inference and proposed design.
+2. Capture supporting, contradicting and contextual evidence with exact section/page/line/table locators and permitted paraphrases.
+3. Search for disconfirmation. Record the query/route, outcome and found source IDs, including “not found within this search”; absence is not proof against the alternative.
+4. For comparative, causal or trend claims, target at least two independent evidence lineages where accessible. A descriptive fact may have one authoritative primary source or direct code observation with a documented single-source rationale. More URLs do not establish independence.
+5. Reconcile apparent disagreement by checking definitions, dates, units, sample, methods and applicability. Record unresolved differences instead of voting by source/agent majority. If scope is corrected, revise dependent claims and recommendations too.
+6. Check consequential arithmetic: inputs, formula, denominator, units/currency, rounding and assumptions. Specify what a “run”, “sale” or “sample” counts; counts of multidimensional combinations must match the stated unit.
+7. Assign `supported`, `partially-supported`, `disputed`, or `unresolved`, qualitative confidence with reasons, and the effect on the answer. Where corroboration/access is insufficient, narrow the claim or keep it qualified; preserve the limitation even if the overall investigation can close.
+
+The plan's record of checks is auditable testimony, not an automated proof of truth. The validator checks presence, identity, links and consistency; the coordinator and independent reviewer assess actual support and independence. Initial fact-checking is part of each bounded assignment. Reopening cited sources within review scope uses review allowance; new research questions or scope expansions use research assignments/rounds. Stop at the selected limits and publish the unresolved status.
+
 ## Worker handoff
 
 Provide each researcher:
 
 - The research brief, selected mode, task ID, and specific question.
 - Scope boundaries, prerequisite findings, and acceptance criteria.
-- Source strategy, freshness/version requirements, and applicable user constraints.
+- Source strategy, primary/corroborating/counterevidence routes, freshness/version requirements, and applicable user constraints.
 - Its assignment deadline, the separate scratch output location, and available tools.
 - Instructions to work within this assignment without subdelegation or edits to shared artifacts.
 
-Require a return containing answered questions, findings with precise source locators, supporting and conflicting evidence, evidence versus inference, source inspection status, remaining gaps, and acceptance-criteria status. Use task-prefixed provisional IDs in worker notes; the coordinator assigns stable ledger IDs during merge. A tool failure or inaccessible source is a limitation, not evidence for a negative claim.
+Require a return containing answered questions, fact-check inputs with precise source locators and evidence lineages, supporting and conflicting evidence, evidence versus inference, source inspection/access status, disconfirmation search, remaining gaps, and criterion-by-criterion acceptance. Use task-prefixed provisional IDs in worker notes; the coordinator assigns stable ledger IDs during merge. A tool failure or inaccessible source is a limitation, not evidence for a negative claim.
 
 If filesystem output is unavailable but research is otherwise permitted, return structured notes in the agent response. The coordinator can consolidate inline. Source excerpts should be limited to what is needed to verify claims and comply with applicable quotation limits.
 
@@ -67,6 +85,7 @@ Give the reviewer the original research brief, task acceptance criteria, draft r
 1. Trace consequential report claims to source passages. Flag unsupported extrapolation, stale versions/dates, discovery-only citations, and mismatches between evidence and stated confidence.
 2. Identify omitted perspectives or unanswered questions that materially affect the conclusion.
 3. Examine contradictory evidence and whether apparent corroboration comes from independent sources.
-4. Return each finding with affected claim/task IDs, the supporting reason, and a proposed correction or targeted research question.
+4. Check every requirement against the actual artifact section, including requested language, counts, assumptions, acceptance rules and operational effort; inspect calculations and recommendation strength, not just source existence.
+5. Return each finding with affected claim/task/requirement IDs, severity, supporting reason, and proposed correction or targeted research question. Record the exact reviewed report digest and scope. Store the review in a referenced note and its disposition in the plan's structured state.
 
-The coordinator resolves findings by correcting the report, adding bounded research, or explicitly documenting unresolved limits. Recheck only repaired findings and any consequential claims changed by the repair. The review loop ends when its allowance is used, even if gaps remain.
+The coordinator resolves findings by correcting the report, adding bounded research, or explicitly documenting unresolved limits; each resolution points to the changed artifact. Recheck repaired findings and any consequential claims changed by repair. Preserve the last reviewed report body afterward; status/closure information belongs in the plan or receipt. Later substantive changes require remaining recheck allowance, otherwise mark that content unverified. The review loop ends when its allowance is used, even if gaps remain.
