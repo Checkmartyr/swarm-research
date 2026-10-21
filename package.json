@@ -1,0 +1,15 @@
+{
+  "name": "@checkmartyr/swarm-research",
+  "version": "0.1.0",
+  "description": "Install the swarm-research Codex skill",
+  "type": "commonjs",
+  "engines": { "node": ">=18" },
+  "bin": { "swarm-research": "bin/install.js" },
+  "files": ["README.md", "SKILL.md", "agents/", "references/", "scripts/", "bin/install.js"],
+  "scripts": { "test": "node --test" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Checkmartyr/swarm-research.git"
+  }
+}
+
