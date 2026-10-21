@@ -14,7 +14,7 @@ Old notes without these blocks remain unchanged and return unverified-format. An
 
 ## Canonical records
 
-Place exactly one fenced block with info string `json swarm-research-state` in the plan. Place fenced `json swarm-research-sources` and `json swarm-research-claims` arrays in the ledger or its parts. Canonical blocks, evidence anchors and report citations belong inside `# Swarm Research`; lookalike content in `# Personal Notes` is user content and cannot satisfy validation. Preserve IDs and explicit `<a id="s001"></a>` / `<a id="c001"></a>` anchors beside the records (batch arrays can follow an index of anchored headings). These are the maintained records; optional tables/prose summarize them. Avoid duplicating their facts in another independently maintained JSON file.
+Place exactly one fenced block with info string `json swarm-research-state` in the plan. Place fenced `json swarm-research-sources` and `json swarm-research-claims` arrays in the ledger or its parts. Canonical blocks, evidence anchors and report citations belong inside `# Swarm Research`; lookalike content in `# Personal Notes` is user content and cannot satisfy validation. Preserve IDs and explicit `<a id="s001"></a>` / `<a id="c001"></a>` anchors beside the records (batch arrays can follow an index of anchored headings). These are the maintained records; optional tables/prose summarize them. Avoid duplicating their facts in another independently maintained JSON file. [workspace-layout.md](workspace-layout.md) defines local `state.json` for observed I/O/recovery and generated `sources.json` caches with input hashes. They do not replace these canonical blocks, and the current validator does not validate those local operational/cache schemas.
 
 Plan state fields:
 
