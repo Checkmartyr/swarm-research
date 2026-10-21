@@ -16,7 +16,7 @@ A Codex skill for planning and carrying out bounded, evidence-led research. It h
 
 Copy the complete repository directory into your Codex skills directory:
 
-- Windows: `%USERPROFILE%\\.codex\\skills\\swarm-research`
+- Windows: `%USERPROFILE%\.codex\skills\swarm-research`
 - Other platforms: `~/.codex/skills/swarm-research` (or `$CODEX_HOME/skills/swarm-research`)
 
 Keep `SKILL.md`, `agents/`, `references/`, and `scripts/` together. The skill can then be invoked explicitly with `$swarm-research`; Codex may also select it automatically for a matching research request.
