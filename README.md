@@ -1,6 +1,6 @@
 # Swarm Research
 
-A Codex skill for planning and carrying out bounded, evidence-led research. It helps clarify what the user needs, coordinate research tasks, compare independent sources, fact-check important claims, and verify the final deliverables.
+A multi-skill research toolkit for Codex that brings together document-grounded clarification, specialist research, multi-source fact-checking, synthesis, and independent review. It coordinates these capabilities through one bounded research workflow; the package installs the main `$swarm-research` entry skill and its supporting protocols and tools.
 
 ## What it does
 
@@ -12,14 +12,28 @@ A Codex skill for planning and carrying out bounded, evidence-led research. It h
 - Organizes active work, drafts, evidence, checkpoints, and final exports according to [the workspace layout](references/workspace-layout.md).
 - Provides a read-only validator for plan, evidence, review, and saved-output records.
 
-## Install
+## Install with npx
 
-Copy the complete repository directory into your Codex skills directory:
+After the package is published to npm, preview the files and target:
 
-- Windows: `%USERPROFILE%\.codex\skills\swarm-research`
-- Other platforms: `~/.codex/skills/swarm-research` (or `$CODEX_HOME/skills/swarm-research`)
+```sh
+npx -y @checkmartyr/swarm-research --dry-run
+```
 
-Keep `SKILL.md`, `agents/`, `references/`, and `scripts/` together. The skill can then be invoked explicitly with `$swarm-research`; Codex may also select it automatically for a matching research request.
+Install the skill:
+
+```sh
+npx -y @checkmartyr/swarm-research
+```
+
+The installer uses `CODEX_HOME` when set; otherwise it targets `~/.codex/skills/swarm-research` (on Windows, `%USERPROFILE%\\.codex\\skills\\swarm-research`). If that directory already exists, installation stops without changing it. Use `--force` to overwrite files with matching names while preserving unrelated files in the skill directory:
+
+```sh
+npx -y @checkmartyr/swarm-research --force
+```
+
+Use `--dest <directory>` to choose the exact skill directory. The installer requires Node.js 18 or newer. To install manually, copy `SKILL.md`, `agents/`, `references/`, and `scripts/` into the Codex skill directory. The skill can then be invoked with `$swarm-research`; Codex may also select it automatically for a matching research request.
+
 
 ## Research workflow
 
@@ -60,6 +74,12 @@ Run the test suite with:
 
 ```sh
 python -m unittest discover -s scripts -p "test_*.py"
+```
+
+Run the npx installer tests with Node.js 18 or newer:
+
+```sh
+npm test
 ```
 
 ## Documentation
